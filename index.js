@@ -183,7 +183,7 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 function getFullNames(runners) {
   let newRunners = [];
   runners.forEach(function(items) {
-    newRunners.push('${items.last_name}, ${items.first_name}');
+    newRunners.push(`${items.last_name}, ${items.first_name}`);
   });
   return newRunners;
 }
@@ -245,7 +245,8 @@ function tallyUpDonations(runners) {
   let totalDonations = runners.reduce((total, runner) => {
     return total += runner.donation;
   },0);
-
+  return totalDonations;
+}
 
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
@@ -266,8 +267,7 @@ function tallyUpDonations(runners) {
 function counterMaker() {
   let count = 0;
 return function counter() {
-  ++count;
-  return count;
+    return count++;
 }
   
 }
